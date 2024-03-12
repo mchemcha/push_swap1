@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:10:35 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 18:30:59 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:23:09 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void sort_list(t_stack *list)
         tmp = tmp->next; 
     }
 }
-// void positionlist(t_stack *list)
-// {
-//     int size = ft_lstsize(list);
-//     int i = 0;
-//     while(size--)
-//     {
-//         list->position = i;
-//         i++;
-//         list =list ->next;
-//     }
-// }
+void positionlist(t_stack *list)
+{
+    int size = ft_lstsize(list);
+    int i = 0;
+    while(size--)
+    {
+        list->position = i;
+        i++;
+        list =list ->next;
+    }
+}
 // t_stack max_list(t_stack *list)
 // {
 //     t_stack *max_node;

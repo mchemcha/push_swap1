@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 17:50:13 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 18:33:57 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:26:52 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ void push_to_b(t_stack **list, t_stack **stack_b)
         else 
             r_a(list,0);
     }
-    puts("a===");
-	printf_lst_next(*list);
-    puts("stack_b===");
-	printf_lst_next(*stack_b);
 }
 
 // void push_to_a(t_stack **stack_a,t_stack **stack_b)

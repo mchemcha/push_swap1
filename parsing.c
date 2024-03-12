@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:39:37 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 17:58:00 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:41:05 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,24 +80,43 @@ int compare_int(int a, int b)
         return (0);
     return (1);
 }
-int check_dubl(int *numbs, int len)
+int check_dubl(char **tab)
 {
     int i = 0;
-    int j;
-    while (i < len)
+    int j ;
+    
+    while(tab[i])
     {
         j = i + 1;
-        while (j < len)
+        while(tab[j])
         {
-            if (!compare_int(numbs[i], numbs[j]))
-                return (0);
-            else
+            if(!compare_int(*tab[i] , *tab[j]))
+                return(0);
+            else 
                 j++;
         }
         i++;
     }
     return (1);
 }
+// int check_dubl(int *numbs, int len)
+// {
+//     int i = 0;
+//     int j;
+//     while (i < len)
+//     {
+//         j = i + 1;
+//         while (j < len)
+//         {
+//             if (!compare_int(numbs[i], numbs[j]))
+//                 return (0);
+//             else
+//                 j++;
+//         }
+//         i++;
+//     }
+//     return (1);
+// }
 // t_stack *parcing(char **tab)
 // {
 //     t_stack *list;
@@ -133,7 +152,7 @@ void parcing(t_stack **list, char **tab)
 {
 
     int i = 0;
-    if(!check_min_max(tab))
+    if(!check_min_max(tab) || !check_dubl(tab))
         ft_error("Eroor");
     while(tab[i])
     {

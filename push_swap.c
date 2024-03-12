@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 18:20:17 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:22:42 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,19 @@ int	main(int ac, char *av[])
 		ft_error("Error");
 	parcing(&list, tab);
 	// list = parcing(tab);
-
 	push_to_b(&list, &stack_b);
-	
+	puts("a===");
+	printf_lst_next(list);
+	puts("stack_b===");
+	printf_lst_next(stack_b);
+	puts("\n========\n");
     // positionlist(list);
-
+	target_position(list,stack_b);
+	puts("a===");
+	printf_lst_next(list);
+	puts("stack_b===");
+	printf_lst_next(stack_b);
+	
 	// printf("max is>>>%d>>>>%d", max_list(list).position,max_list(list).content);
 	//t_stack *head ;
 	// head = longest_Increasing_Subsequence(list,1);
@@ -61,9 +69,5 @@ int	main(int ac, char *av[])
 	// puts("befor a===");
 	// printf_lst_next(list);
 	// push_to_a(&list,&stack_b);
-	// puts("a===");
-	// printf_lst_next(list);
-	// puts("stack_b===");
-	// printf_lst_next(stack_b);
 	
 }

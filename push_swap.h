@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:27:09 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 18:37:27 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:23:20 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
     int content;
     int index;
     int lis;
+    int t_p;
     int position;
     struct s_stack *next;
     struct s_stack *prev;
@@ -39,11 +40,11 @@ char	    **ft_split(char const *s, char c);
 int	        ft_strlen(const char *str);
 void	    *ft_calloc(size_t count, size_t size);
 int	        ft_strncmp(const char *s1, const char *s2, size_t n);
-t_stack       *to_list(int *tab, int len);
+t_stack     *to_list(int *tab, int len);
 int         check_min_max(char **tab);
-int         check_dubl(int *tab, int len);
+int         check_dubl(char **tab);
 int         check_int(char **tab);
-int   ft_atoi(char *str);
+int         ft_atoi(char *str);
 void        parcing(t_stack **list, char **tab);
 int	        ft_isdigit(int c);
 int         check_space(char *s);
@@ -69,10 +70,11 @@ int         index_list(t_stack *list, int mark);
 void        sort_list(t_stack *list);
 int         l_i_s(t_stack *list);
 void        push_to_b(t_stack **list, t_stack **stack_b);
+void target_position(t_stack *stack_a, t_stack *stack_b);
 // void        push_to_a(t_stack **stack_a, t_stack **stack_b);
 // t_stack     max_list(t_stack *list);
 // void        sort_list(t_stack *list);
-// void        positionlist(t_stack *list);
+void        positionlist(t_stack *list);
 // void        push_to_b(t_stack **list, t_stack **stack_b);
 
 #endif

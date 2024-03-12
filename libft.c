@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 09:02:55 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 17:54:17 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/10 20:31:53 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ int	ft_atoi(char *str)
 			sign *= -1;
 		i++;
 	}
+	if ( (sign == 1 && result  > INT_MAX )|| (sign == -1 && result - 1 > INT_MAX))
+            ft_error("empty max");
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = (result * 10) + str[i] - 48;

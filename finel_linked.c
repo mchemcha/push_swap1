@@ -17,6 +17,7 @@ t_stack	*ft_lstnew(int content)
 	if (list == NULL)
 		return (NULL);
 	list -> index = 0;
+	list -> t_p = -1;
 	list -> position =0;
 	list -> content = content;
 	list -> next = list;
@@ -104,3 +105,14 @@ int	ft_lstsize(t_stack *lst)
 
 	return (s);
 }
+
+
+
+
+
+// failed tests:
+
+// "-" 
+// "+" 
+// "   -   "
+// " -0 0"
