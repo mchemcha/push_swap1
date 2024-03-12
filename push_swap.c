@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/11 20:22:42 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:40:34 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	main(int ac, char *av[])
 		check_empty(av[i]);
 		check_space(av[i]);
 	}
-	
-	// char **sp = ft_split(av[i], ' ');
 	s = av[1];
 	i = 1;
 	while(av[++i])
@@ -42,19 +40,36 @@ int	main(int ac, char *av[])
 	if (!check_int(tab))
 		ft_error("Error");
 	parcing(&list, tab);
-	// list = parcing(tab);
-	push_to_b(&list, &stack_b);
+	
+	if(ft_lstsize(list) == 2)
+		sort_2(&list);
+	else if(ft_lstsize(list) == 3)
+		sort_3(&list);
+	else if(ft_lstsize(list) == 4)
+		sort_4(&list,&stack_b);
+	else if(ft_lstsize(list) == 5)
+		sort_5(&list, &stack_b);
+	else
+	{
+		push_to_b(&list, &stack_b);
+		positionlist(list);
+		positionlist(stack_b);
+		target_position(list,stack_b);
+		cost(list);
+		cost(stack_b);
+		target_cost(list, stack_b);
+	}
+	
 	puts("a===");
 	printf_lst_next(list);
 	puts("stack_b===");
 	printf_lst_next(stack_b);
-	puts("\n========\n");
+	// puts("\n========\n");
     // positionlist(list);
-	target_position(list,stack_b);
-	puts("a===");
-	printf_lst_next(list);
-	puts("stack_b===");
-	printf_lst_next(stack_b);
+	
+	
+	// target_position(list,stack_b);
+	// printf_lst_next(list);
 	
 	// printf("max is>>>%d>>>>%d", max_list(list).position,max_list(list).content);
 	//t_stack *head ;
@@ -69,5 +84,4 @@ int	main(int ac, char *av[])
 	// puts("befor a===");
 	// printf_lst_next(list);
 	// push_to_a(&list,&stack_b);
-	
 }

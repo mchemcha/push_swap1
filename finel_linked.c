@@ -18,7 +18,9 @@ t_stack	*ft_lstnew(int content)
 		return (NULL);
 	list -> index = 0;
 	list -> t_p = -1;
-	list -> position =0;
+	list ->cost = 0;
+	list -> position = 0;
+	list ->t_cost = 0;
 	list -> content = content;
 	list -> next = list;
     list -> prev = list;                                                                                                                                                                                                              

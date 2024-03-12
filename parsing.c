@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:39:37 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/11 18:41:05 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:10:05 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int check_min_max(char **tab)
     }
     return (1);
 }
-int compare_int(int a, int b)
+static int compare_int(char *a, char *b)
 {
-    if (a == b)
+    if (ft_atoi(a) == ft_atoi(b))
         return (0);
     return (1);
 }
@@ -90,7 +90,7 @@ int check_dubl(char **tab)
         j = i + 1;
         while(tab[j])
         {
-            if(!compare_int(*tab[i] , *tab[j]))
+            if(!compare_int(tab[i] , tab[j]))
                 return(0);
             else 
                 j++;
@@ -98,56 +98,7 @@ int check_dubl(char **tab)
         i++;
     }
     return (1);
-}
-// int check_dubl(int *numbs, int len)
-// {
-//     int i = 0;
-//     int j;
-//     while (i < len)
-//     {
-//         j = i + 1;
-//         while (j < len)
-//         {
-//             if (!compare_int(numbs[i], numbs[j]))
-//                 return (0);
-//             else
-//                 j++;
-//         }
-//         i++;
-//     }
-//     return (1);
-// }
-// t_stack *parcing(char **tab)
-// {
-//     t_stack *list;
-//     int *nums;
-
-//     nums = malloc(ft_strlen(*tab) * sizeof(int));
-//     // if (!check_int(tab))
-//     //     ft_error("Error");
-//     int j = 0;
-//     list = NULL;
-//     while (tab[j])
-//     {
-//         nums[j] = atoi(tab[j]);
-//         // if (!list)
-//         // {
-//         //     list = ft_lstnew(nums[j]);
-//         // }
-//         // else
-//             ft_lstadd_back(&list, ft_lstnew(nums[j]));
-//         printf("first%d\n", list->content);
-//         j++;
-//     }
-//     // if(!check_dubl(nums, j))
-//     //     ft_error("Error");
-//     // list = to_list(nums, j);
-//     printf_lst_next(list);
-    
-//     return (list);
-// }
-
-
+}                                                                                                                                                                                                                                                                                                                                                                                         
 void parcing(t_stack **list, char **tab)
 {
 
@@ -160,4 +111,3 @@ void parcing(t_stack **list, char **tab)
          i++;
     }
 }
-

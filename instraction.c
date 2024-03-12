@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:28:16 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 12:44:00 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:32:37 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,16 @@ void r_r(t_stack **stack_a, t_stack **stack_b)
 	r_a(stack_a,0);
 	r_a(stack_b,0);
 }
-void r_r_a(t_stack **stack_a)
+void r_r_a(t_stack **stack_a, int i)
 {
 	*stack_a = ft_lstlast(*stack_a);
+	if(i == 1)
+		write(1, "rra\n", 4);
 }
 void r_r_r(t_stack **stack_a, t_stack **stack_b)
 {
-	r_r_a(stack_a);
-	r_r_a(stack_b);
+	r_r_a(stack_a, 0);
+	r_r_a(stack_b, 0);
 }
 void p_b(t_stack **stack_a,t_stack **stack_b, int i)
 {
@@ -89,7 +91,7 @@ void p_b(t_stack **stack_a,t_stack **stack_b, int i)
 		write(1, "pb\n", 3);
 }
 
-void  p_a(t_stack **stack_a,t_stack **stack_b)
+void  p_a(t_stack **stack_a,t_stack **stack_b, int i)
 {
 	
 	t_stack *a;
@@ -107,13 +109,13 @@ void  p_a(t_stack **stack_a,t_stack **stack_b)
 	a = *stack_b;
 	last = ft_lstlast(*stack_b);
 	b = a->next;
-	
 	a->next =a;
 	a->prev=a;
 	b->prev =last;
 	last->next=b;
-		
 	ft_lstadd_front(stack_a,a);
 	*stack_b=b;
+	if(i == 1)
+		write(1, "pa\n", 3);
 }
 
