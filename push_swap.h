@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:27:09 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/12 15:44:33 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:11:30 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_stack
     int t_p;
     int cost;
     int t_cost;
+    int total;
     struct s_stack *next;
     struct s_stack *prev;
 }t_stack;
@@ -80,6 +81,10 @@ void        sort_2(t_stack **list);
 void        sort_3(t_stack **list);
 void        sort_4(t_stack **list, t_stack **stack_b);
 void        sort_5(t_stack **list,t_stack **stack_b);
+void        total_cost(t_stack *stack_a);
+t_stack     *min_list(t_stack *list);
+t_stack     *min_total_cost_list(t_stack *list);
+void        best_move(t_stack **list,t_stack **stack_b);
 
 // t_stack     max_list(t_stack *list);
 // void        push_to_a(t_stack **stack_a, t_stack **stack_b);

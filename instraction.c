@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:28:16 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/12 15:32:37 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:54:23 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,11 @@ void  p_a(t_stack **stack_a,t_stack **stack_b, int i)
 	t_stack *a;
 	t_stack *last;
 	t_stack *b;
+	(void)i;
 	if (!*stack_b)
 		return ;
+	if(i == 1)
+		write(1, "pa\n", 3);
 	if(ft_lstsize(*stack_b) == 1)
 	{
 		t_stack *first = *stack_b;
@@ -115,7 +118,5 @@ void  p_a(t_stack **stack_a,t_stack **stack_b, int i)
 	last->next=b;
 	ft_lstadd_front(stack_a,a);
 	*stack_b=b;
-	if(i == 1)
-		write(1, "pa\n", 3);
 }
 

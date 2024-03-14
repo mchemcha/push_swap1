@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/12 15:40:34 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:11:41 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,32 +40,34 @@ int	main(int ac, char *av[])
 	if (!check_int(tab))
 		ft_error("Error");
 	parcing(&list, tab);
-	
-	if(ft_lstsize(list) == 2)
-		sort_2(&list);
-	else if(ft_lstsize(list) == 3)
-		sort_3(&list);
-	else if(ft_lstsize(list) == 4)
-		sort_4(&list,&stack_b);
-	else if(ft_lstsize(list) == 5)
-		sort_5(&list, &stack_b);
-	else
-	{
-		push_to_b(&list, &stack_b);
-		positionlist(list);
-		positionlist(stack_b);
-		target_position(list,stack_b);
-		cost(list);
-		cost(stack_b);
-		target_cost(list, stack_b);
-	}
-	
-	puts("a===");
+	// p_b(&list, &stack_b,1);
+	// p_a(&list, &stack_b, 1);
+	// if(ft_lstsize(list) == 2)
+	// 	sort_2(&list);
+	// else if(ft_lstsize(list) == 3)
+	// 	sort_3(&list);
+	// else if(ft_lstsize(list) == 4)
+	// 	sort_4(&list,&stack_b);
+	// else if(ft_lstsize(list) == 5)
+	// 	sort_5(&list, &stack_b);
+	// else
+	// {
+	// 	push_to_b(&list, &stack_b);
+	// 	positionlist(list);
+	// 	positionlist(stack_b);
+	// 	target_position(list,stack_b);
+	// 	cost(list);
+	// 	cost(stack_b);
+	// 	target_cost(list, stack_b);
+	// 	total_cost(list);
+	// 	total_cost(stack_b);
+	// }
+	best_move(&list,&stack_b);
+	puts("\nstack_a\n");
 	printf_lst_next(list);
-	puts("stack_b===");
+	puts("\nstack_b\n");
 	printf_lst_next(stack_b);
-	// puts("\n========\n");
-    // positionlist(list);
+	puts("\n========\n");
 	
 	
 	// target_position(list,stack_b);

@@ -16,14 +16,15 @@ t_stack	*ft_lstnew(int content)
 	list = (t_stack *)malloc(sizeof(t_stack));
 	if (list == NULL)
 		return (NULL);
-	list -> index = 0;
-	list -> t_p = -1;
-	list ->cost = 0;
-	list -> position = 0;
-	list ->t_cost = 0;
-	list -> content = content;
-	list -> next = list;
-    list -> prev = list;                                                                                                                                                                                                              
+	list->index = 0;
+	list->t_p = -1;
+	list->cost = 0;
+	list->position = 0;
+	list->t_cost = 0;
+	list->total = 0;
+	list->content = content;
+	list->next = list;
+    list->prev = list;                                                                                                                                                                                                              
 	return (list);
 }
 void	ft_lstadd_back(t_stack **lst, t_stack *newlst)

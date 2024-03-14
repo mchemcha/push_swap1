@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:10:35 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/12 15:38:08 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:49:20 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,42 @@ void positionlist(t_stack *list)
 //     }
 //     return(*max_node);
 // }
-
+t_stack *min_list(t_stack *list)
+{
+     t_stack *min_node;
+    int size = ft_lstsize(list);
+    int min = INT_MAX;
+    positionlist(list);
+    while(size)
+    {
+        if(list->index < min)
+        {   
+            min = list->index;
+            min_node=list;
+        }
+        list = list->next;
+        size--;
+    }
+    return (min_node);
+}
+t_stack *min_total_cost_list(t_stack *list)
+{
+     t_stack *min_node;
+    int size = ft_lstsize(list);
+    int min = INT_MAX;
+    positionlist(list);
+    while(size)
+    {
+        if(list->total < min)
+        {   
+            min = list->total;
+            min_node=list;
+        }
+        list = list->next;
+        size--;
+    }
+    return (min_node);
+}
 int index_list(t_stack *list, int mark)
 {
 
