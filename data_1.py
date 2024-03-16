@@ -35,7 +35,7 @@ class PsGui:
         wh = 600
         self.i = 0
         self.speed = 0
-        dirname = os.path.dirname(os.path.abspath(__file__))
+        dirname = os.path.dirname(os.path.ft_abspath(__file__))
         PUSHS_PATH = os.path.join(dirname, RELATIVE_PATH)
         self.pile_a = [int(num) for num in sys.argv[1:]]
         self.first_pile = self.pile_a[:]

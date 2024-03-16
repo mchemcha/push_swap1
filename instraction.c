@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:28:16 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/15 22:40:05 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/16 15:22:17 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ void  p_a(t_stack **stack_a,t_stack **stack_b, int i)
 		return;
 	}
 	a = *stack_b;
+	
 	last = ft_lstlast(*stack_b);
 	b = a->next;
 	a->next =a;

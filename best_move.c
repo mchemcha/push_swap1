@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:45:52 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 13:35:35 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/16 16:38:37 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ void	target_position(t_stack *stack_a, t_stack *stack_b)
 	s_a = ft_lstsize(stack_a);
 	positionlist(stack_a);
 	positionlist(stack_b);
-	// sort_list(stack_a);
-	// sort_list(stack_b);
 	if (stack_b == NULL)
 		return ;
 	while (stack_b->t_p == -1)
 	{
-		j = 0;
+		j = -1;
 		closest_biggest = INT_MAX;
-		while (j < s_a)
+		while (++j < s_a)
 		{
 			if (stack_b->index < stack_a->index
 				&& stack_a->index < closest_biggest)
@@ -38,17 +36,16 @@ void	target_position(t_stack *stack_a, t_stack *stack_b)
 				stack_b->t_p = stack_a->position;
 			}
 			stack_a = stack_a->next;
-			j++;
 		}
 		stack_b = stack_b->next;
 	}
 }
 
-void cost(t_stack *stack_a)
+void	cost(t_stack *stack_a)
 {
-	int size;
-	int pm;
-	int i;
+	int	size;
+	int	pm;
+	int	i;
 
 	size = ft_lstsize(stack_a);
 	pm = ft_lstsize(stack_a) / 2;
@@ -68,12 +65,13 @@ void cost(t_stack *stack_a)
 		i++;
 	}
 }
-void target_cost(t_stack *stack_a, t_stack *stack_b)
+
+void	target_cost(t_stack *stack_a, t_stack *stack_b)
 {
-	int closest_biggest;
-	int s_a;
-	int s_b;
-	int i;
+	int	closest_biggest;
+	int	s_a;
+	int	s_b;
+	int	i;
 
 	s_b = ft_lstsize(stack_b);
 	s_a = ft_lstsize(stack_a);
@@ -83,7 +81,8 @@ void target_cost(t_stack *stack_a, t_stack *stack_b)
 		closest_biggest = INT_MAX;
 		while (i < s_a)
 		{
-			if (stack_b->index < stack_a->index && stack_a->index < closest_biggest)
+			if (stack_b->index < stack_a->index
+				&& stack_a->index < closest_biggest)
 			{
 				closest_biggest = stack_a->index;
 				stack_b->t_cost = stack_a->cost;
@@ -94,23 +93,25 @@ void target_cost(t_stack *stack_a, t_stack *stack_b)
 		stack_b = stack_b->next;
 	}
 }
-// int ft_abs(int nbr)
-// {
-// 	int abs;
 
-// 	abs = 0;
+// int	ab(int nbr)
+// {
+// 	int	ft_abs;
+
+// 	ft_abs = 0;
 // 	if (nbr < 0)
-// 		abs = (-1) * nbr;
-// 	return (abs);
+// 		ft_abs = (-1) * nbr;
+// 	return (ft_abs);
 // }
-void total_cost(t_stack *stack_a)
+
+void	total_cost(t_stack *stack_a)
 {
-	int s;
-	int i;
+	int	s;
+	int	i;
 
 	s = ft_lstsize(stack_a);
-	i = 0;
-	while (i < s)
+	i = -1;
+	while (++i < s)
 	{
 		if (stack_a->cost >= 0 && stack_a->t_cost >= 0)
 		{
@@ -121,16 +122,13 @@ void total_cost(t_stack *stack_a)
 		}
 		else if (stack_a->cost < 0 && stack_a->t_cost < 0)
 		{
-			if (abs(stack_a->cost) > abs(stack_a->t_cost))
-				stack_a->total = abs(stack_a->cost);
+			if (ft_abs(stack_a->cost) > ft_abs(stack_a->t_cost))
+				stack_a->total = ft_abs(stack_a->cost);
 			else
-				stack_a->total = abs(stack_a->t_cost);
+				stack_a->total = ft_abs(stack_a->t_cost);
 		}
 		else
-		{
-			stack_a->total = abs((stack_a->cost)) + abs((stack_a->t_cost));
-		}
+			stack_a->total = ft_abs((stack_a->cost)) + ft_abs((stack_a->t_cost));
 		stack_a = stack_a->next;
-		i++;
 	}
 }
