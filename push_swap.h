@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:27:09 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/13 23:11:30 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:46:47 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,16 @@ t_stack		*ft_lstnew(int content);
 int			ft_lstsize(t_stack *lst);
 void		s_a(t_stack **stack_a, int i);
 void		r_a(t_stack **stack_a,int i);
+void        r_b(t_stack **stack_a,int i);
 void		s_s(t_stack **stack_a, t_stack **stack_b);
-void		r_r(t_stack **stack_a, t_stack **stack_b);
+void		r_r(t_stack **stack_a, t_stack **stack_b, int i);
 void		r_r_a(t_stack **stack_a, int i);
-void		r_r_r(t_stack **stack_a, t_stack **stack_b);
+void		r_r_r(t_stack **stack_a, t_stack **stack_b,int i);
 void		p_a(t_stack **stack_a,t_stack **stack_b, int i);
 void		p_b(t_stack **stack_a,t_stack **stack_b, int i);
 void		printf_lst_prev(t_stack *list);
 void		printf_lst_next(t_stack *list);
-int			longest_Increasing_Subsequence(t_stack *list, int mark);
+int			longest_Increasing_Subsequence(t_stack *lis, int i);
 int			index_list(t_stack *list, int mark);
 void		sort_list(t_stack *list);
 int			l_i_s(t_stack *list);
@@ -85,7 +86,8 @@ void        total_cost(t_stack *stack_a);
 t_stack     *min_list(t_stack *list);
 t_stack     *min_total_cost_list(t_stack *list);
 void        best_move(t_stack **list,t_stack **stack_b);
-
+void        get_finel(t_stack **list);
+void r_r_b(t_stack **stack_a, int i);
 // t_stack     max_list(t_stack *list);
 // void        push_to_a(t_stack **stack_a, t_stack **stack_b);
 // t_stack     max_list(t_stack *list);

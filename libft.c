@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 09:02:55 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/10 20:31:53 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:00:34 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,33 +34,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-// int	ft_atoi(char *str)
-// {
-// 	size_t				i;
-// 	int				sign;
-// 	long			result;
-
-// 	result = 0;
-// 	sign = 1;
-// 	i = 0;
-// 	while (str[i] >= ' ')
-// 		i++;
-// 	if (str[i] == '+' || str[i] == '-')
-// 	{
-// 		if (str[i] == '-')
-// 			sign *= -1;
-// 		i++;
-// 	}
-// 	while (str[i] >= '0' && str[i] <= '9')
-// 	{
-// 		puts("pp");
-// 		result = (result * 10 + str[i] - 48);
-// 		//check for overflow <<<<<<
-// 		i++;
-// 	}
-// 	printf("atoi = %d\n", (int)(result *= sign));
-// 	return ((int)(result *= sign));
-// }
 int	ft_atoi(char *str)
 {
 	size_t				i;
@@ -79,7 +52,7 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	if ( (sign == 1 && result  > INT_MAX )|| (sign == -1 && result - 1 > INT_MAX))
-            ft_error("empty max");
+            ft_error("Error");
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = (result * 10) + str[i] - 48;

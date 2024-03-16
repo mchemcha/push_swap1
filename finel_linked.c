@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   finel_linked.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/16 14:01:14 by mchemcha          #+#    #+#             */
+/*   Updated: 2024/03/16 14:01:18 by mchemcha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-
-
 
 t_stack	*ft_lstlast(t_stack *lst)
 {
@@ -44,24 +54,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *newlst)
 		newlst->prev=last;
 	}
 }
-// void ft_lstadd_back(t_stack **lst, t_stack *newlst)
-// {
-//     if (*lst == NULL)
-//     {
-//         *lst = newlst;
-//         newlst->next = newlst;
-//         newlst->prev = newlst;
-//     }
-//     else
-//     {
-//         t_stack *last = (*lst)->prev;
-//         last->next = newlst;
-//         newlst->prev = last;
-//         newlst->next = *lst;
-//         (*lst)->prev = newlst;
-//     }
-// }
-
 void	ft_lstadd_front(t_stack **lst, t_stack *newlst)
 {
 	if (*lst == NULL)
@@ -81,7 +73,6 @@ t_stack *to_list(int *tab, int len)
 	i = 0;
     while (i < len)
     {
-		printf("tab[%d] : %d\n", i, tab[i]);
 		t_stack *p = ft_lstnew(tab[i]);
 		if (list == NULL)
 			list=p;
@@ -114,7 +105,6 @@ int	ft_lstsize(t_stack *lst)
 
 
 // failed tests:
-
 // "-" 
 // "+" 
 // "   -   "

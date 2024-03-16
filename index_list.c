@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:10:35 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/13 13:49:20 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:47:40 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,6 @@ void positionlist(t_stack *list)
         list =list ->next;
     }
 }
-// t_stack max_list(t_stack *list)
-// {
-//     t_stack *max_node;
-//     int size = ft_lstsize(list);
-//     int max = 0;
-//     while(size)
-//     {
-//         if(list->content > max)
-//         {   
-//             max = list->content;
-//             max_node=list;
-//         }
-//         list = list->next;
-//         size--;
-//     }
-//     return(*max_node);
-// }
 t_stack *min_list(t_stack *list)
 {
      t_stack *min_node;
@@ -112,7 +95,7 @@ int index_list(t_stack *list, int mark)
     
     while (compar)
     {
-        compar -> index = 0;
+        compar -> lis = 0;
         if(compar -> content >= cont -> content)
         {
             cont = compar;
@@ -150,4 +133,5 @@ int longest_Increasing_Subsequence(t_stack *list, int mark)
         index_list(tmp2,1);
     return (i);
 }
+
 
