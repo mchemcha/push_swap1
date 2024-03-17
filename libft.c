@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 09:02:55 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 16:41:23 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:51:20 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,6 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n
-		&& ((unsigned char)s1[i] != '\0' || (unsigned char)s2[i] != '\0'))
-	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
-}
 int	ft_atoi(char *str)
 {
 	size_t				i;
@@ -80,6 +66,7 @@ int	ft_strlen(const char *str)
 	}
 	return (s);
 }
+
 char	*ft_strdup(const char *s1)
 {
 	char	*str;
@@ -88,9 +75,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	str = (char *)malloc (ft_strlen(s1) + 1);
 	if (!str)
-	{
-		return (NULL);
-	}
+		return (free(str), str = NULL, NULL);
 	while (s1[i])
 	{
 		str[i] = s1[i];
@@ -99,26 +84,4 @@ char	*ft_strdup(const char *s1)
 	str[i] = 0;
 	return (str);
 }
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*str;
-	size_t	i;
 
-	if (s == NULL)
-		return (NULL);
-	if ((int)start > ft_strlen(s))
-		return (ft_strdup(""));
-	if ((int)len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	i = 0;
-	str = malloc(len + 1);
-	if (str == NULL)
-		return (NULL);
-	while (i < len)
-	{
-		str[i] = s[i + start];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}

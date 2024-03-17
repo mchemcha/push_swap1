@@ -6,11 +6,25 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:01:14 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 16:17:50 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:05:22 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void lst_clear(t_stack **list)
+{
+	int	s;
+	int i = 0;
+
+	s = ft_lstsize((*list));
+	while (i < s)
+	{
+		free((*list));
+		(*list)= (*list)->next;
+		i++;
+	}
+}
 
 t_stack	*ft_lstlast(t_stack *lst)
 {

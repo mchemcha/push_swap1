@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 17:03:38 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:46:02 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int ac, char *av[])
 	char	*s;
 	t_stack	*list;
 	t_stack	*stack_b;
-
+	if(ac == 1)
+		ft_error("Error");
 	stack_b = NULL;
 	if (ac < 2)
 		exit (1);
@@ -36,14 +37,11 @@ int	main(int ac, char *av[])
 		check_empty(av[i]);
 		check_space(av[i]);
 	}
-	s = av[1];
-	i = 1;
-	while (av[++i])
-	{
-		s = ft_strjoin(s, " ");
-		s = ft_strjoin(s, av[i]);
-	}
+	s = ft_strjoin1(ac, av);
 	tab = ft_split(s, ' ');
+	free(s);
 	parcing(&list, tab);
+	erreur(tab);
 	best_move(&list, &stack_b);
+	lst_clear(&list);
 }

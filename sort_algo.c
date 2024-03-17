@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:41:15 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 13:54:31 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/17 13:55:22 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void best_move(t_stack **list, t_stack **stack_b)
 			j++;
 		}
 		get_finel(list);
-		// 	puts("\nstack_a\n");
-		// 	printf_lst_next(*list);
-		// 	puts("\nstack_b\n");
-		// 	printf_lst_next(*stack_b);
-		// 	puts("\n========\n");
+		// puts("\nstack_a\n");
+		// printf_lst_next(*list);
+		// puts("\nstack_b\n");
+		// printf_lst_next(*stack_b);
+		// puts("\n========\n");
 	}
 }
 void get_finel(t_stack **list)

@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:39:37 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 16:21:24 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:09:18 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@ int	check_empty(char *s)
 		ft_error("Error");
 	return (1);
 }
-
-// int	ft_isdigit(int c)
-// {
-// 	if (c >= '0' && c <= '9')
-// 		return (1);
-// 	return (0);
-// }
-
 int	check_space(char *s)
 {
 	int	i;
@@ -33,6 +25,8 @@ int	check_space(char *s)
 	i = 0;
 	if (s[i] == '-' || s[i] == '+')
 		i++;
+	if (s[i] == '\0' || s[i] == ' ')
+		ft_error("Error");
 	if (s[0] == ' ')
 	{
 		while (s[i] == ' ')
