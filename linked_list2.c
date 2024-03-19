@@ -1,47 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   linked_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:30:12 by mchemcha         ###   ########.fr       */
+/*   Created: 2024/03/19 23:44:44 by mchemcha          #+#    #+#             */
+/*   Updated: 2024/03/19 23:45:41 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-void ss()
+t_stack	*to_list(int *tab, int len)
 {
-	system("leaks push_swap");
-}
-
-int	main(int ac, char *av[])
-{
-	// atexit(ss);
 	int		i;
-	char	**tab;
-	char	*s;
 	t_stack	*list;
-	t_stack	*stack_b;
-	// if(ac == 1)
-	// 	ft_error("Error");
-	stack_b = NULL;
-	if (ac < 2)
-		exit (1);
+	t_stack	*p;
+
+	list = NULL;
 	i = 0;
-	while (av[++i])
+	while (i < len)
 	{
-		check_empty(av[i]);
-		check_space(av[i]);
+		p = ft_lstnew(tab[i]);
+		if (list == NULL)
+			list = p;
+		else
+			ft_lstadd_back(&list, p);
+		i++;
 	}
-	s = ft_strjoin1(ac, av);
-	tab = ft_split(s, ' ');
-	free(s);
-	parcing(&list, tab);
-	erreur(tab);
-	best_move(&list, &stack_b);
-	lst_clear(&list);
+	return (list);
 }

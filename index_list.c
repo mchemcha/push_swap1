@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:10:35 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 13:47:40 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/19 21:44:42 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ int index_list(t_stack *list, int mark)
     
     while (compar)
     {
-        compar -> lis = 0;
-        if(compar -> content >= cont -> content)
+        compar->lis = 0;
+        if(compar->content >= cont->content)
         {
             cont = compar;
             if (mark)

@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:45:52 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/16 16:38:37 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:28:49 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,6 @@ void	target_cost(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-// int	ab(int nbr)
-// {
-// 	int	ft_abs;
-
-// 	ft_abs = 0;
-// 	if (nbr < 0)
-// 		ft_abs = (-1) * nbr;
-// 	return (ft_abs);
-// }
-
 void	total_cost(t_stack *stack_a)
 {
 	int	s;
@@ -122,13 +112,13 @@ void	total_cost(t_stack *stack_a)
 		}
 		else if (stack_a->cost < 0 && stack_a->t_cost < 0)
 		{
-			if (ft_abs(stack_a->cost) > ft_abs(stack_a->t_cost))
-				stack_a->total = ft_abs(stack_a->cost);
+			if (ab(stack_a->cost) > ab(stack_a->t_cost))
+				stack_a->total = ab(stack_a->cost);
 			else
-				stack_a->total = ft_abs(stack_a->t_cost);
+				stack_a->total = ab(stack_a->t_cost);
 		}
 		else
-			stack_a->total = ft_abs((stack_a->cost)) + ft_abs((stack_a->t_cost));
+			stack_a->total = ab((stack_a->cost)) + ab((stack_a->t_cost));
 		stack_a = stack_a->next;
 	}
 }

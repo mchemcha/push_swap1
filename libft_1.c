@@ -6,25 +6,12 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:34:18 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 15:49:14 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/17 17:00:21 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**erreur(char **tab)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (NULL);
-}
 
 static int	cont_word(char const *str, char c)
 {

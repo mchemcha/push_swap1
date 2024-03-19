@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:27:09 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 15:49:28 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:28:36 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ int			ft_lstsize(t_stack *lst);
 void		s_a(t_stack **stack_a, int i);
 void		r_a(t_stack **stack_a, int i);
 void		r_b(t_stack **stack_a, int i);
-void		s_s(t_stack **stack_a, t_stack **stack_b);
+void		s_s(t_stack **stack_a, t_stack **stack_b,int i);
 void		r_r(t_stack **stack_a, t_stack **stack_b, int i);
+void		s_b(t_stack **stack_a, int i);
 void		r_r_a(t_stack **stack_a, int i);
 void		r_r_r(t_stack **stack_a, t_stack **stack_b, int i);
 void		p_a(t_stack **stack_a, t_stack **stack_b, int i);
@@ -89,8 +90,7 @@ t_stack		*min_list(t_stack *list);
 t_stack		*min_total_cost_list(t_stack *list);
 void		best_move(t_stack **list, t_stack **stack_b);
 void		get_finel(t_stack **list);
-int			ab(int nbr);
-int			ft_abs(int n);
+int			ab(int n);
 void 		lst_clear(t_stack **list);
 long long	ft_atoi_2(char *str);
 
@@ -100,4 +100,7 @@ char	*ft_read_afterline(char *s);
 char	*get_next_line(int fd);
 size_t	ft_strlen2(const char *str);
 char	*ft_strchr(const char *s, int c);
+t_stack	*if_instraction(t_stack **list, t_stack **stack_b);
+void	check_list_sort(t_stack *list);
+void	instraction(char *read,t_stack **list, t_stack **stack_b);
 #endif

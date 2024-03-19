@@ -6,13 +6,13 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 09:02:55 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 15:51:20 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:28:20 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_abs(int n)
+int ab(int n)
 {
 	if (n < 0)
 		return (-n);

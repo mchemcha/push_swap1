@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:53:45 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 16:01:14 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:44:28 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,6 @@ int	check_int(char **tab)
 	}
 	return (1);
 }
-// static void erreur(char **tab)
-// {
-// 	unsigned int	i;
-
-// 	i = 0;
-// 	while (tab[i])
-// 	{
-// 		free(tab[i]);
-// 		i++;
-// 	}
-// 	free(tab);
-// }
 
 void	parcing(t_stack **list, char **tab)
 {
