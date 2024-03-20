@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 23:46:50 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 09:06:37 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:43:57 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_error(char *str)
 	i = 0;
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		write(2, &str[i], 1);
 		i++;
 	}
-	write(1, "\n", 1);
+	write(2, "\n", 1);
 	exit(1);
 }
 
