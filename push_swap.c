@@ -6,18 +6,11 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 10:10:50 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:57:24 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
-
-// void ss()
-// {
-// 	// atexit(ss);
-// 	system("leaks push_swap");
-// }
 
 int	main(int ac, char *av[])
 {

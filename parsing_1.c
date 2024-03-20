@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:39:37 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 10:11:29 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:39:14 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,11 @@ int	check_empty(char *s)
 	return (1);
 }
 
-int	check_space(char *s)
+void	space_arg(char *s)
 {
 	int	i;
 
-	i = 0;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	if (s[i] == '\0' || s[i] == ' ')
-		ft_error("Error");
+	i = 1;
 	if (s[0] == ' ')
 	{
 		while (s[i] == ' ')
@@ -35,9 +31,23 @@ int	check_space(char *s)
 		if (s[i] == '\0')
 			ft_error("Error");
 	}
+}
+
+int	check_space(char *s)
+{
+	int	i;
+
+	i = 0;
+	space_arg(s);
 	while (s[i])
 	{
-		if (ft_isdigit(s[i]) || s[i] == '-' || s[i] == '+')
+		if (s[i] == '-' || s[i] == '+')
+		{
+			i++;
+			if (s[i] == ' ' || s[i] == '\0')
+				ft_error("Error");
+		}
+		if (ft_isdigit(s[i]))
 			i++;
 		else if (s[i] != ' ')
 			ft_error("Error");

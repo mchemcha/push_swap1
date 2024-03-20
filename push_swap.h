@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:27:09 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 10:06:06 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:43:18 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int			check_dubl(char **tab);
 int			check_int(char **tab);
 int			ft_atoi(char *str);
 void		parcing(t_stack **list, char **tab);
+void		space_arg(char *s);
 int			ft_isdigit(int c);
 int			check_space(char *s);
 int			check_empty(char *s);
@@ -75,7 +76,6 @@ void		printf_lst_next(t_stack *list);
 int			longest_increasing_subsequence(t_stack *lis, int i);
 int			index_list(t_stack *list, int mark);
 void		sort_list(t_stack *list);
-// int			l_i_s(t_stack *list);
 void		push_to_b(t_stack **list, t_stack **stack_b);
 void		target_position(t_stack *stack_a, t_stack *stack_b);
 void		positionlist(t_stack *list);

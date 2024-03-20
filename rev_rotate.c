@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 09:25:00 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 10:10:10 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:37:50 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	r_r_b(t_stack **stack_a, int i)
 
 void	r_r_r(t_stack **stack_a, t_stack **stack_b, int i)
 {
-	if (!(*stack_b) || !(*stack_a))
-		return ;
 	if (i == 1)
 		write(1, "rrr\n", 4);
 	r_r_a(stack_a, 0);

@@ -6,16 +6,11 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 15:30:13 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 10:06:06 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:56:13 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// void ss()
-// {
-// 	system("leaks push_swap");
-	// atexit(ss);
-// }
 
 int	main(int ac, char **av)
 {
@@ -64,11 +59,10 @@ int	compar(char *s1, char *s2)
 
 void	instraction(char *read, t_stack **list, t_stack **stack_b)
 {
-	printf("!!!\n");
 	if (compar(read, "ra\n"))
 		r_a(list, 0);
 	else if (compar(read, "rb\n"))
-		r_b(list, 0);
+		r_b(stack_b, 0);
 	else if (compar(read, "rr\n"))
 		r_r(list, stack_b, 0);
 	else if (compar(read, "rra\n"))

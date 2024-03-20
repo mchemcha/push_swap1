@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 09:21:56 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/20 09:26:43 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:37:37 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	s_b(t_stack **stack_a, int i)
 
 void	s_s(t_stack **stack_a, t_stack **stack_b, int i)
 {
-	if (!(*stack_b) || !(*stack_a))
-		return ;
 	if (i == 1)
 		write(1, "ss\n", 3);
 	s_a(stack_a, 0);
