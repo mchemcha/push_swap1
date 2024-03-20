@@ -6,12 +6,11 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:34:18 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 17:00:21 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:15:53 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 static int	cont_word(char const *str, char c)
 {
@@ -36,6 +35,7 @@ static int	cont_word(char const *str, char c)
 	}
 	return (cont);
 }
+
 char	**ft_split(char *s, char c)
 {
 	char	**tab;
@@ -84,52 +84,52 @@ void	*ft_calloc(size_t count, size_t size)
 	return (tmp);
 }
 
-static size_t    ft_str_len(int ac, char **av)
+static size_t	ft_str_len(int ac, char **av)
 {
-    int        i;
-    size_t    j;
-    size_t    k;
+	int		i;
+	size_t	j;
+	size_t	k;
 
-    i = 0;
-    j = 0;
-    k = 0;
-    while (++i < ac)
-    {
-        while (av[i][k])
-        {
-            k++;
-            j++;
-        }
-        k = 0;
-        j++;
-    }
-    return (j);
+	i = 0;
+	j = 0;
+	k = 0;
+	while (++i < ac)
+	{
+		while (av[i][k])
+		{
+			k++;
+			j++;
+		}
+		k = 0;
+		j++;
+	}
+	return (j);
 }
 
-char    *ft_strjoin1(int ac, char **av)
+char	*ft_strjoin1(int ac, char **av)
 {
-    char    *str;
-    int        i;
-    int        y;
-    int        j;
+	char	*str;
+	int		i;
+	int		y;
+	int		j;
 
-    str = (char *)malloc(ft_str_len(ac, av));
-    if (!str)
-        return (NULL);
-    i = 0;
-    y = 0;
-    while (++i < ac)
-    {
-        j = 0;
-        while (av[i][j])
-        {
-            str[y] = av[i][j];
-            j++;
-        	y++;
-        }
-        str[y] = ' ';
-        y++;
-    }
-    str[--y] = 0;
-    return (str);
+	str = (char *)malloc(ft_str_len(ac, av));
+	if (!str)
+		return (NULL);
+	i = 0;
+	y = 0;
+	while (++i < ac)
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			str[y] = av[i][j];
+			j++;
+			y++;
+		}
+		str[y] = ' ';
+		y++;
+	}
+	str[--y] = 0;
+	return (str);
 }

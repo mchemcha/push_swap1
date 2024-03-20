@@ -6,19 +6,19 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 15:30:13 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:47:28 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:06:06 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void ss()
-{
-	system("leaks push_swap");
-}
+// void ss()
+// {
+// 	system("leaks push_swap");
+	// atexit(ss);
+// }
 
 int	main(int ac, char **av)
 {
-	atexit(ss);
 	int		i;
 	char	**tab;
 	char	*s;
@@ -122,7 +122,7 @@ void	check_list_sort(t_stack *list)
 	{
 		if (first == last)
 			break ;
-		if (first->content < compar->content)
+		if (first->c < compar->c)
 		{
 			first = first->next;
 			compar = compar->next;

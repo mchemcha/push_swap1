@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:53:45 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:44:28 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:11:07 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,4 @@ void	parcing(t_stack **list, char **tab)
 		ft_lstadd_back(list, ft_lstnew(ft_atoi(tab[i])));
 		i++;
 	}
-	// erreur(tab);
 }

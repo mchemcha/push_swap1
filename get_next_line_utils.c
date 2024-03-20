@@ -6,13 +6,11 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 13:52:13 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 15:51:26 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 09:06:51 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 char	*ft_strchr(const char *s, int c)
 {

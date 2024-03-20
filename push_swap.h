@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:27:09 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:28:36 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:06:06 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_stack
 {
-	int				content;
+	int				c;
 	int				index;
 	int				lis;
 	int				position;
@@ -39,7 +39,7 @@ typedef struct s_stack
 
 char		*ft_strdup(const char *s1);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		*ft_strjoin1(int ac, char  **av);
+char		*ft_strjoin1(int ac, char **av);
 char		*ft_strjoin(char *s1, char *s2);
 char		**ft_split(char *s, char c);
 int			ft_strlen(const char *str);
@@ -57,12 +57,12 @@ void		ft_error(char *str);
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_front(t_stack **lst, t_stack *newlst);
 void		ft_lstadd_back(t_stack **lst, t_stack *newlst);
-t_stack		*ft_lstnew(int content);
+t_stack		*ft_lstnew(int c);
 int			ft_lstsize(t_stack *lst);
 void		s_a(t_stack **stack_a, int i);
 void		r_a(t_stack **stack_a, int i);
 void		r_b(t_stack **stack_a, int i);
-void		s_s(t_stack **stack_a, t_stack **stack_b,int i);
+void		s_s(t_stack **stack_a, t_stack **stack_b, int i);
 void		r_r(t_stack **stack_a, t_stack **stack_b, int i);
 void		s_b(t_stack **stack_a, int i);
 void		r_r_a(t_stack **stack_a, int i);
@@ -72,7 +72,7 @@ void		p_b(t_stack **stack_a, t_stack **stack_b, int i);
 void		r_r_b(t_stack **stack_a, int i);
 void		printf_lst_prev(t_stack *list);
 void		printf_lst_next(t_stack *list);
-int			longest_Increasing_Subsequence(t_stack *lis, int i);
+int			longest_increasing_subsequence(t_stack *lis, int i);
 int			index_list(t_stack *list, int mark);
 void		sort_list(t_stack *list);
 // int			l_i_s(t_stack *list);
@@ -85,22 +85,25 @@ void		sort_2(t_stack **list);
 void		sort_3(t_stack **list);
 void		sort_4(t_stack **list, t_stack **stack_b);
 void		sort_5(t_stack **list, t_stack **stack_b);
+void		sort_2_3_4_5(t_stack **list, t_stack **stack_b);
+void		instr_best(t_stack **best_move, t_stack **list, t_stack **stack_b);
+void		instr_best2(t_stack **best_move, t_stack **list, t_stack **stack_b);
 void		total_cost(t_stack *stack_a);
+void		post_list(t_stack **list, t_stack **stack_b);
 t_stack		*min_list(t_stack *list);
 t_stack		*min_total_cost_list(t_stack *list);
 void		best_move(t_stack **list, t_stack **stack_b);
 void		get_finel(t_stack **list);
 int			ab(int n);
-void 		lst_clear(t_stack **list);
+void		lst_clear(t_stack **list);
 long long	ft_atoi_2(char *str);
-
-char	**erreur(char **tab);
-char	*ft_read_line(char *s);
-char	*ft_read_afterline(char *s);
-char	*get_next_line(int fd);
-size_t	ft_strlen2(const char *str);
-char	*ft_strchr(const char *s, int c);
-t_stack	*if_instraction(t_stack **list, t_stack **stack_b);
-void	check_list_sort(t_stack *list);
-void	instraction(char *read,t_stack **list, t_stack **stack_b);
+char		**erreur(char **tab);
+char		*ft_read_line(char *s);
+char		*ft_read_afterline(char *s);
+char		*get_next_line(int fd);
+size_t		ft_strlen2(const char *str);
+char		*ft_strchr(const char *s, int c);
+t_stack		*if_instraction(t_stack **list, t_stack **stack_b);
+void		check_list_sort(t_stack *list);
+void		instraction(char *read, t_stack **list, t_stack **stack_b);
 #endif

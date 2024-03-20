@@ -6,28 +6,27 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:04:02 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:30:12 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:10:50 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void ss()
-{
-	system("leaks push_swap");
-}
+// void ss()
+// {
+// 	// atexit(ss);
+// 	system("leaks push_swap");
+// }
 
 int	main(int ac, char *av[])
 {
-	// atexit(ss);
 	int		i;
 	char	**tab;
 	char	*s;
 	t_stack	*list;
 	t_stack	*stack_b;
-	// if(ac == 1)
-	// 	ft_error("Error");
+
 	stack_b = NULL;
 	if (ac < 2)
 		exit (1);

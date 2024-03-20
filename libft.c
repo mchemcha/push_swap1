@@ -6,19 +6,20 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 09:02:55 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:28:20 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:13:41 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ab(int n)
+int	ab(int n)
 {
 	if (n < 0)
 		return (-n);
 	else
 		return (n);
 }
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
@@ -28,14 +29,14 @@ int	ft_isdigit(int c)
 
 int	ft_atoi(char *str)
 {
-	size_t				i;
+	size_t		i;
 	long long	sign;
 	long long	result;
 
 	result = 0;
 	sign = 1;
 	i = 0;
-	while ( str[i] == 32)
+	while (str[i] == 32)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -43,8 +44,8 @@ int	ft_atoi(char *str)
 			sign *= -1;
 		i++;
 	}
-	if ( (sign == 1 && result  > INT_MAX )|| (sign == -1 && result - 1 > INT_MAX))
-            ft_error("Error");
+	if ((sign == 1 && result > INT_MAX) || (sign == -1 && result - 1 > INT_MAX))
+		ft_error("Error");
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = (result * 10) + str[i] - 48;
@@ -52,6 +53,7 @@ int	ft_atoi(char *str)
 	}
 	return (result *= sign);
 }
+
 int	ft_strlen(const char *str)
 {
 	int	i;
@@ -73,7 +75,7 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	i = 0;
-	str = (char *)malloc (ft_strlen(s1) + 1);
+	str = (char *)malloc(ft_strlen(s1) + 1);
 	if (!str)
 		return (free(str), str = NULL, NULL);
 	while (s1[i])
@@ -84,4 +86,3 @@ char	*ft_strdup(const char *s1)
 	str[i] = 0;
 	return (str);
 }
-

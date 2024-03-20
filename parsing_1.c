@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:39:37 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/17 16:09:18 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:11:29 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	check_empty(char *s)
 		ft_error("Error");
 	return (1);
 }
+
 int	check_space(char *s)
 {
 	int	i;

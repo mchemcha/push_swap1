@@ -2,6 +2,7 @@
     "files.associations": {
         "push_swap.h": "c",
         "ratio": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "utility": "c"
     }
 }

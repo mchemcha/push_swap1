@@ -6,15 +6,17 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 23:46:50 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:46:55 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 09:06:37 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error(char *str)
+void	ft_error(char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (str[i])
 	{
 		write(1, &str[i], 1);
@@ -24,9 +26,9 @@ void ft_error(char *str)
 	exit(1);
 }
 
-char **erreur(char **tab)
+char	**erreur(char **tab)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (tab[i])
@@ -37,11 +39,13 @@ char **erreur(char **tab)
 	free(tab);
 	return (NULL);
 }
-void lst_clear(t_stack **list)
-{
-	int s;
-	int i = 0;
 
+void	lst_clear(t_stack **list)
+{
+	int	s;
+	int	i;
+
+	i = 0;
 	s = ft_lstsize((*list));
 	while (i < s)
 	{

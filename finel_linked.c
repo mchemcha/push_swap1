@@ -6,7 +6,7 @@
 /*   By: mchemcha <mchemcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:01:14 by mchemcha          #+#    #+#             */
-/*   Updated: 2024/03/19 23:46:10 by mchemcha         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:06:06 by mchemcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 	return (lst->prev);
 }
 
-t_stack	*ft_lstnew(int content)
+t_stack	*ft_lstnew(int c)
 {
 	t_stack	*list;
 
@@ -32,7 +32,7 @@ t_stack	*ft_lstnew(int content)
 	list->position = 0;
 	list->t_cost = 0;
 	list->total = 0;
-	list->content = content;
+	list->c = c;
 	list->next = list;
 	list->prev = list;
 	return (list);
